@@ -1,37 +1,50 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import * as Facebook from 'expo-facebook';
-import * as Google from 'expo-google-app-auth';
+import { Text } from 'react-native';
 
-const facebookLogin = async () => {
-  const appID = "1378404828993249";
-  const result = await Facebook.logInWithReadPermissionsAsync(appID);
-  console.log(JSON.stringify(result, null, "  "));
-}
-
-const googleLogin = async () => {
-  const result = await Google.logInAsync({
-    clientId: "170907473553-8fv1b87pc1m50t0bvfnqfkksu34t0pv8.apps.googleusercontent.com",
-    iosClientId: "170907473553-8fv1b87pc1m50t0bvfnqfkksu34t0pv8.apps.googleusercontent.com",
-  });
-  console.log(JSON.stringify(result, null, "  "));
-}
+import Row from './GridSystem/row';
+import Col from './GridSystem/col';
+import Grid from './GridSystem/grid';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <Button title="Facebook" onPress={facebookLogin} />
-      <Button title="Google" onPress={googleLogin} />
-    </View>
+    <Grid numberOfColumns={8} gutterSize={16}>
+      <Row>
+        <Col size={1}></Col>
+        <Col size={2}></Col>
+        <Col size={3}></Col>
+        <Col size={2}></Col>
+      </Row>
+      <Row>
+        <Col size={4}></Col>
+        <Col size={4}></Col>
+      </Row>
+      <Row>
+        <Col size={3}></Col>
+        <Col size={5}></Col>
+      </Row>
+      <Row>
+        <Col size={1}></Col>
+        <Col size={7}></Col>
+      </Row>
+      <Row>
+        <Col size={7}></Col>
+        <Col size={1}></Col>
+      </Row>
+      <Row>
+        <Col size={1}></Col>
+        <Col size={1}></Col>
+        <Col size={1}></Col>
+        <Col size={1}></Col>
+        <Col size={1}></Col>
+        <Col size={1}></Col>
+        <Col size={1}></Col>
+        <Col size={1}></Col>
+      </Row>
+      <Row>
+        <Col size={8} styles={{alignItems: "center", justifyContent:"center"}}>
+          <Text>Something</Text>
+        </Col>
+      </Row>
+    </Grid>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
