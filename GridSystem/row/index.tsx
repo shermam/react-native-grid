@@ -8,9 +8,7 @@ interface RowStyles {
 const styles: RowStyles = {
   view: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 8,
-    marginTop: 8,
+    padding: 8,
   }
 }
 

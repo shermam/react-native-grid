@@ -12,7 +12,6 @@ export default function App() {
         <Col size={1}></Col>
         <Col size={2}></Col>
         <Col size={3}></Col>
-        <Col size={2}></Col>
       </Row>
       <Row>
         <Col size={4}></Col>

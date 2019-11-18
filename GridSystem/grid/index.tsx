@@ -26,7 +26,7 @@ const Grid: React.FC<GridProps> = (props: GridProps) => {
   GridContext.Provider;
   return (
     <GridContext.Provider value={{ ...props }}>
-      <View style={[styles.view, { padding: props.gutterSize }]}>
+      <View style={[styles.view, ]}>
         {props.children}
       </View>
     </GridContext.Provider>

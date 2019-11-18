@@ -19,7 +19,7 @@ const Col: React.FC<ColProps> = (props: ColProps) => {
   return (
 
     // TODO: backgroundColor: "green", minHeight: 50 should be removed
-    <View style={[{width, backgroundColor: "green", minHeight: 50}, props.styles]}>
+    <View style={[{width, backgroundColor: "green", minHeight: 50, marginHorizontal: 8}, props.styles]}>
       {props.children}
     </View>
   );
